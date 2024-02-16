@@ -1,25 +1,27 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import { MyForm, Mybutton, Mytable } from './inputFrom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+
+
+  callbackFunction(name) {
+
+    console.log(name)
+    // this.setState("blockSection", name)
+  }
+
+  callbackFunction(classes){
+    console.log(classes)
+  }
+
+
+  render() {
+    return <>
+      <MyForm submitFunction={this.callbackFunction} type="charan" movieList={["java", "sf"]}/>
+      <h1>HI FRIENDS !</h1>
+    </>
+  }
 }
 
 export default App;
